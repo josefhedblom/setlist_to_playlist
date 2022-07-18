@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "eventDate": "01-01-2022",
+    "venue": "Debaser Strand Stockholm",
+    "artist": "Bob Hund"
+  },
+  {
+    "id": 2,
+    "eventDate": "02-01-2022",
+    "venue": "Debaser Strand Stockholm",
+    "artist": "Bob Hund"
+  },
+  {
+    "id": 3,
+    "eventDate": "03-01-2022",
+    "venue": "Debaser Strand Stockholm",
+    "artist": "Bob Hund"
+  },
+  {
+    "id": 4,
+    "eventDate": "04-01-2022",
+    "venue": "Debaser Strand Stockholm",
+    "artist": "Bob Hund"
+  },
+  {
+    "id": 5,
+    "eventDate": "05-01-2022",
+    "venue": "Debaser Strand Stockholm",
+    "artist": "Bob Hund"
+  }
+]
