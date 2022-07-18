@@ -1,11 +1,15 @@
+import Container from "react-bootstrap/Container";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
+import { Home } from "./pages/Home/Home";
 
 const App = () => {
   return (
     <div>
       <Navbar />
-      <h1>App.js</h1>
+      <Container>
+        <Home />
+      </Container>
       <Footer />
     </div>
   );
