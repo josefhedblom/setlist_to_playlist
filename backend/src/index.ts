@@ -1,21 +1,16 @@
-import express, { Request, Response, NextFunction } from 'express';
-import { Exception } from './interface/exception.interface';
+import express from 'express';
+import { SetlistRouter } from './routers/SetlistFmApi/setlistfm.router';
+import { ExceptionRouter } from './routers/Exceptions/exceptiton.router';
+import { ExampleRouter } from './routers/Example/example.router';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 
-app.get('/test', (req: Request, res: Response) => {
-  res.json({ message: 'Success!' });
-});
+app.use('/api/setlist', SetlistRouter);
+app.use(ExampleRouter); // only develop
+app.use(ExceptionRouter);
 
-app.use((req: Request, res: Response, next: NextFunction) => {
-  const error = { status: 404, message: 'Not Found' };
-  next(error);
-});
-
-app.use((error: Exception, req: Request, res: Response, next: NextFunction) => {
-  res.status(error.status || 500).json({
-    message: error.message,
-  });
-});
-
-app.listen(3000, () => console.log(`Listing on http://localhost:3000`));
+app.listen(process.env.PORT || 4545, () =>
+  console.log(`Listing on http://localhost:${process.env.PORT}`),
+);
