@@ -1,18 +1,25 @@
+import { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { Home } from "./pages/Home/Home";
+import { setAccessToken } from "./hooks/useAuth";
 
-const App = () => {
+function App() {
+  const [token, setToken] = useState("");
+
+  useEffect(() => {
+    setToken(setAccessToken());
+  });
   return (
-    <div>
+    <>
       <Navbar />
       <Container>
-        <Home />
+        <Home token={token} />
       </Container>
       <Footer />
-    </div>
+    </>
   );
-};
+}
 
 export default App;
