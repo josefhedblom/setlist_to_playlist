@@ -4,8 +4,8 @@ import { FormatResult } from "./FormatResult";
 export const Result = ({ data }) => {
   return (
     <Container>
-      {data.map((title, index) => {
-        return <FormatResult title={title} key={index} />;
+      {data.map((show, index) => {
+        return <FormatResult data={show} />;
       })}
     </Container>
   );

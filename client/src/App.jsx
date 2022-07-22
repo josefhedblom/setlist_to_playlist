@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
-import { Home } from "./pages/Home/Home";
+import { Login } from "./pages/Login/Login";
 import { setAccessToken } from "./hooks/useAuth";
+import { Dashboard } from "./pages/Dashboard/Dashboard";
 
 function App() {
   const [token, setToken] = useState("");
@@ -14,9 +15,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <Container>
-        <Home token={token} />
-      </Container>
+      <Container>{token ? <Dashboard /> : <Login />}</Container>
       <Footer />
     </>
   );
