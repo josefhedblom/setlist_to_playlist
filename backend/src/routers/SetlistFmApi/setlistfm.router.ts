@@ -5,10 +5,11 @@ import dotenv from 'dotenv';
 dotenv.config();
 const Route = Router();
 
-Route.get('/artists/', (req: Request, res: Response) => {
+Route.get('/artists/:search', (req: Request, res: Response) => {
+  const { search } = req.params;
   const setlist = new SetlistFm(`${process.env.SETLIST_FM_API_KEY}`);
   setlist
-    .searchArtist('Bob hund')
+    .searchArtist(`${search}`)
     .then((data) => res.json(data))
     .catch((error) => console.log(error));
 });
