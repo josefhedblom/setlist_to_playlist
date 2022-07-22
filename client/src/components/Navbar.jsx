@@ -1,6 +1,7 @@
 export const Navbar = () => {
   const logout = () => {
     localStorage.removeItem("access_token");
+    localStorage.removeItem("playlistId");
     window.history.pushState({}, null, "/");
   };
   return (
