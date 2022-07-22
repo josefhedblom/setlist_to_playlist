@@ -1,29 +1,42 @@
 import { Request, Response, NextFunction, Router } from 'express';
+import { Spotify } from '../../controllers/SpotifyWebApi.controller';
 import SpotifyWebApi from 'spotify-web-api-node';
-import dotenv from 'dotenv';
+import {
+  CLIENT_ID,
+  CLIENT_SECRET,
+  REDIRECT_URI,
+} from '../../config/dotenv.config';
 
-dotenv.config();
 const Route = Router();
 
-Route.get('/session/account', (req: Request, res: Response) => {
-  const { token } = req.body;
-  console.log(token);
-  // const spotifyApi = new SpotifyWebApi({
-  //   clientId: '673d271b4c6e43b1835465d0095e2d79',
-  //   clientSecret: '793dd520c4034ffc919ed04f4473c047',
-  //   redirectUri: 'http://localhost:3000',
-  // });
-  // spotifyApi.setAccessToken(token);
-  // spotifyApi
-  //   .getMe()
-  //   .then((data) => {
-  //     res.json({ username: data.body.display_name });
-  //   })
-  //   .catch((error) => {
-  //     res.json({
-  //       error: error.message,
-  //     });
-  //   });
+Route.post('/session/create-playlist', (req: Request, res: Response) => {
+  const { data, accessToken } = req.body;
+  const spotify = new Spotify({ access_token: accessToken, data: data });
+  spotify.createPlaylist().then((reponses: any) => {
+    res.json({
+      playlistId: reponses,
+    });
+  });
+});
+
+Route.post('/session/add-to-playlist', async (req: Request, res: Response) => {
+  const { song, accessToken, id } = req.body;
+  const spotifyApi = new SpotifyWebApi({
+    clientId: CLIENT_ID,
+    clientSecret: CLIENT_SECRET,
+    redirectUri: REDIRECT_URI,
+  });
+  spotifyApi.setAccessToken(accessToken);
+  const result = await spotifyApi.searchTracks(song);
+  const trackUri: any = result.body.tracks?.items[0].uri;
+  spotifyApi
+    .addTracksToPlaylist(id, [trackUri])
+    .then((data) => {
+      console.log('Added tracks to the playlist!');
+    })
+    .catch((err) => {
+      console.log(req.body);
+    });
 });
 
 export { Route as SpotifyRouter };

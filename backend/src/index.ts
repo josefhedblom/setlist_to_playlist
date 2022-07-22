@@ -3,8 +3,7 @@ import { SetlistRouter } from './routers/SetlistFmApi/setlistfm.router';
 import { SpotifyRouter } from './routers/SpotifyApi/spotify.router';
 import { ExceptionRouter } from './routers/Exceptions/exceptiton.router';
 import { ExampleRouter } from './routers/Example/example.router';
-import dotenv from 'dotenv';
-dotenv.config();
+import { PORT } from './config/dotenv.config';
 
 const app = express();
 app.use(express.json());
@@ -14,6 +13,6 @@ app.use('/api/spotify', SpotifyRouter);
 app.use(ExampleRouter); // only develop
 app.use(ExceptionRouter);
 
-app.listen(process.env.PORT || 4545, () =>
-  console.log(`Listing on http://localhost:${process.env.PORT}`),
+app.listen(PORT || 4545, () =>
+  console.log(`Listing on http://localhost:${PORT}`),
 );

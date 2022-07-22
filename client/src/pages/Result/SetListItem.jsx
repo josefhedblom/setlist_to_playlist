@@ -1,6 +1,18 @@
 import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
+import { SpotifyContext } from "../../context/SpotifyContext";
+import axios from "axios";
 export const SetListItem = ({ data }) => {
+  const addToPlaylist = async (song) => {
+    const id = localStorage.getItem("playlistId");
+    const accessToken = SpotifyContext();
+    axios
+      .post("/api/spotify/session/add-to-playlist/", { song, accessToken, id })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => console.log(error));
+  };
   return (
     <ListGroup variant="flush" as="ol" numbered>
       {data.set.map(({ song }) => {
@@ -8,7 +20,11 @@ export const SetListItem = ({ data }) => {
           return (
             <ListGroup.Item key={index} as="li">
               {songs.name}{" "}
-              <Button size="sm" variant="outline-secondary">
+              <Button
+                onClick={() => addToPlaylist(songs.name)}
+                size="sm"
+                variant="outline-secondary"
+              >
                 Add to playlist
               </Button>
             </ListGroup.Item>
