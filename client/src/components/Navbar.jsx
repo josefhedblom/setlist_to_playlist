@@ -10,7 +10,7 @@ export const Navbar = () => {
         <div className="container-fluid">
           <a className="navbar-brand">Setlist to Playlist</a>
           <div className="d-flex" role="search">
-            <button onClick={logout} className="btn btn-outline-success">
+            <button onClick={() => logout} className="btn btn-outline-success">
               Logout
             </button>
           </div>
