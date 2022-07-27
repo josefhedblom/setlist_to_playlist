@@ -1,11 +1,6 @@
 import { Request, Response, NextFunction, Router } from 'express';
 import { Spotify } from '../../controllers/SpotifyWebApi.controller';
 import SpotifyWebApi from 'spotify-web-api-node';
-import {
-  CLIENT_ID,
-  CLIENT_SECRET,
-  REDIRECT_URI,
-} from '../../config/dotenv.config';
 
 const Route = Router();
 
@@ -22,9 +17,9 @@ Route.post('/session/create-playlist', (req: Request, res: Response) => {
 Route.post('/session/add-to-playlist', async (req: Request, res: Response) => {
   const { song, accessToken, id } = req.body;
   const spotifyApi = new SpotifyWebApi({
-    clientId: CLIENT_ID,
-    clientSecret: CLIENT_SECRET,
-    redirectUri: REDIRECT_URI,
+    clientId: '673d271b4c6e43b1835465d0095e2d79',
+    clientSecret: '793dd520c4034ffc919ed04f4473c047',
+    redirectUri: 'https://setlist-to-playlist.josefhedblom.se',
   });
   spotifyApi.setAccessToken(accessToken);
   const result = await spotifyApi.searchTracks(song);

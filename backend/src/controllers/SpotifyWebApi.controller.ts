@@ -1,15 +1,10 @@
 import SpotifyWebApi from 'spotify-web-api-node';
-import {
-  CLIENT_ID,
-  CLIENT_SECRET,
-  REDIRECT_URI,
-} from '../config/dotenv.config';
 
 export class Spotify {
   CONFIG = {
-    CLIENT_ID: CLIENT_ID,
-    CLIENT_SECRET: CLIENT_SECRET,
-    REDIRECT_URI: REDIRECT_URI,
+    CLIENT_ID: '673d271b4c6e43b1835465d0095e2d79',
+    CLIENT_SECRET: '793dd520c4034ffc919ed04f4473c047',
+    REDIRECT_URI: 'https://setlist-to-playlist.josefhedblom.se',
     ACCESS_TOKEN: '',
     ARTIST: '',
     VENUE: '',
