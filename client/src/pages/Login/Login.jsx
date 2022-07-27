@@ -1,4 +1,4 @@
-import { AUTH_URL } from "../../config/index";
+import { CONFIG } from "../../config/env.config";
 
 export function Login() {
   return (
@@ -7,7 +7,7 @@ export function Login() {
       <div className="col-lg-6 mx-auto">
         <p className="lead mb-4">Create a Spotify playlist from Setlist.fm!</p>
         <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <a href={AUTH_URL}>Login with Spotify</a>
+          <a href={CONFIG.URL_DEV}>Login with Spotify</a>
         </div>
       </div>
     </div>
