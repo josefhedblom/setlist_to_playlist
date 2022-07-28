@@ -13,11 +13,11 @@ function App() {
     setToken(setAccessToken());
   });
   return (
-    <>
+    <div className="d-flex flex-column min-vh-100">
       <Navbar />
       <Container>{token ? <Dashboard /> : <Login />}</Container>
       <Footer />
-    </>
+    </div>
   );
 }
 

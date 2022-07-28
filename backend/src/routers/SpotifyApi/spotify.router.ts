@@ -20,7 +20,7 @@ Route.post('/session/add-to-playlist', async (req: Request, res: Response) => {
   const spotifyApi = new SpotifyWebApi({
     clientId: CONFIG.CLIENT_ID,
     clientSecret: CONFIG.CLIENT_SECRET,
-    redirectUri: CONFIG.REDIRECT_URI,
+    redirectUri: CONFIG.REDIRECT_DEV_URI,
   });
   spotifyApi.setAccessToken(accessToken);
   const result = await spotifyApi.searchTracks(song);

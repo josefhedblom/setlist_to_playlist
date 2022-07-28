@@ -6,18 +6,20 @@ export const Navbar = () => {
   };
   return (
     <header>
-      <nav className="navbar navbar-dark bg-dark">
+      <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
             Setlist to Playlist
           </a>
           <div className="d-flex" role="search">
-            <button
-              onClick={() => logout()}
-              className="btn btn-outline-success"
-            >
-              Logout
-            </button>
+            {localStorage.getItem("access_token") ? (
+              <button
+                onClick={() => logout()}
+                className="btn btn-outline-success"
+              >
+                Logout
+              </button>
+            ) : null}
           </div>
         </div>
       </nav>
