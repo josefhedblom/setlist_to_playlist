@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export const Footer = () => {
   return (
     <footer className="mt-auto pb-auto navbar navbar-expand-lg bg-light ">
@@ -28,6 +29,9 @@ export const Footer = () => {
         <a className="nav-link" href="https://open.spotify.com" target="_blank">
           Spotify
         </a>
+        <Link className="nav-link" to="/release-notes">
+          Release notes
+        </Link>
       </div>
     </footer>
   );
