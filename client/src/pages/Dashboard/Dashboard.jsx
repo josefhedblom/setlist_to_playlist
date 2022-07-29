@@ -9,26 +9,26 @@ export function Dashboard() {
     const response = await data.json();
     setResult(response);
   };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    fetchData(search);
+  };
   return (
     <div>
-      <div className="input-group mt-3 mb-3">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Search SetlistFm"
-          aria-label="Search SetlistFm"
-          aria-describedby="button-addon2"
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <button
-          className="btn btn-outline-secondary"
-          type="button"
-          id="button-addon2"
-          onClick={() => fetchData(search)}
-        >
-          Search
-        </button>
-      </div>
+      <form onSubmit={handleSubmit}>
+        <div className="input-group mt-3 mb-3">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Search SetlistFm"
+            aria-label="Search SetlistFm"
+            aria-describedby="button-addon2"
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
+      </form>
       <div>{result.length > 0 ? <Result data={result} /> : ""}</div>
     </div>
   );
