@@ -5,7 +5,7 @@ export const Result = ({ data }) => {
   return (
     <Container>
       {data.map((show, index) => {
-        return <FormatResult data={show} />;
+        return <FormatResult key={index} data={show} />;
       })}
     </Container>
   );
