@@ -4,7 +4,7 @@
 
 - About page
 - Release notes page
-- Footer links [Github, SetlistFm, Spotify, Contact, Release notes]
+- Footer links [Github, SetlistFm, Twitter, Spotify, Contact, Release notes]
 - Spotify logo
 - Descriptive text to startpage
 
