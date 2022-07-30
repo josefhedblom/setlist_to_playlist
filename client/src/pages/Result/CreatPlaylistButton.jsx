@@ -57,7 +57,11 @@ export const CreatePlaylistButton = ({ data }) => {
                 href={`https://open.spotify.com/playlist/${playlistLink}`}
                 target="_blank"
               >
-                View playlist{" "}
+                View Spotify playlist{" "}
+              </a>{" "}
+              |{" "}
+              <a href={`${data.url}`} target="_blank">
+                View setlist on Setlist.fm{" "}
               </a>
             </Modal.Body>
 

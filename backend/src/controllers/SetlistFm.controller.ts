@@ -28,6 +28,7 @@ export class SetlistFm {
         artist: setlist[index].artist.name,
         venue: setlist[index].venue.name,
         set: setlist[index].sets.set,
+        url: setlist[index].url,
       };
     });
   }
