@@ -13,8 +13,9 @@ export const CreatePlaylistButton = ({ data }) => {
   const accessToken = SpotifyContext();
 
   const createPlaylist = async () => {
+    data.accessToken = accessToken;
     axios
-      .post("/api/spotify/session/create-playlist", { data, accessToken })
+      .post("/api/spotify/session/create-playlist", { data })
       .then((response) => {
         console.log(response.status);
         if (response.status === 200) {
