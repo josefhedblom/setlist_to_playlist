@@ -27,6 +27,9 @@ export function Dashboard() {
             aria-describedby="button-addon2"
             onChange={(e) => setSearch(e.target.value)}
           />
+          <button className="btn btn-md btn-success" type="submit">
+            Search
+          </button>
         </div>
       </form>
       <div>{result.length > 0 ? <Result data={result} /> : ""}</div>
