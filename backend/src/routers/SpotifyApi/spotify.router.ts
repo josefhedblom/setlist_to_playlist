@@ -1,13 +1,12 @@
-import { Request, Response, NextFunction, Router } from 'express';
+import { Request, Response, Router } from 'express';
 import { Spotify } from '../../controllers/SpotifyWebApi.controller';
-import SpotifyWebApi from 'spotify-web-api-node';
-import { CONFIG } from '../../config/env.config';
+import { Setlist } from '../../interface/SpotifyApi/spotify.interface';
 
 const Route = Router();
 
 Route.post('/session/create-playlist', (req: Request, res: Response) => {
-  const { data, accessToken } = req.body;
-  const spotify = new Spotify({ access_token: accessToken, data: data });
+  const data: Setlist = req.body.data;
+  const spotify = new Spotify(data);
   spotify.createPlaylist().then((reponses: any) => {
     res.json({
       playlistId: reponses,
@@ -16,23 +15,13 @@ Route.post('/session/create-playlist', (req: Request, res: Response) => {
 });
 
 Route.post('/session/add-to-playlist', async (req: Request, res: Response) => {
-  const { song, accessToken, id } = req.body;
-  const spotifyApi = new SpotifyWebApi({
-    clientId: CONFIG.CLIENT_ID,
-    clientSecret: CONFIG.CLIENT_SECRET,
-    redirectUri: CONFIG.REDIRECT_DEV_URI,
-  });
-  spotifyApi.setAccessToken(accessToken);
-  const result = await spotifyApi.searchTracks(song);
-  const trackUri: any = result.body.tracks?.items[0].uri;
-  spotifyApi
-    .addTracksToPlaylist(id, [trackUri])
-    .then((data) => {
-      console.log('Added tracks to the playlist!');
-    })
-    .catch((err) => {
-      console.log(req.body);
+  const data: Setlist = req.body.data;
+  const spotify = new Spotify(data);
+  spotify.addTrackToPlaylist().then((response) => {
+    res.json({
+      message: response,
     });
+  });
 });
 
 export { Route as SpotifyRouter };

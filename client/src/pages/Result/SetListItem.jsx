@@ -6,10 +6,12 @@ export const SetListItem = ({ data }) => {
   const addToPlaylist = async (song) => {
     const id = localStorage.getItem("playlistId");
     const accessToken = SpotifyContext();
+    data.song = song;
+    (data.accessToken = accessToken), (data.id = id);
     axios
-      .post("/api/spotify/session/add-to-playlist/", { song, accessToken, id })
+      .post("/api/spotify/session/add-to-playlist/", { data })
       .then((response) => {
-        console.log(response);
+        console.log(response.status);
       })
       .catch((error) => console.log(error));
   };
