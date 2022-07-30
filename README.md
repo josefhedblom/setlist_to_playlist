@@ -1,9 +1,27 @@
-# Release Notes
+## 1.1.0-ALPHA1 - [2022-07-30]
+
+### New
+
+- About page
+- Release notes page
+- Footer links [Github, SetlistFm, Spotify, Contact, Release notes]
+- Spotify logo
+- Descriptive text to startpage
+
+### Fix
+
+- Add SetlistFm url for the setlist to the modal popup
+- Search: input now works with 'return/enter' key
 
 ## 1.0.1-ALPHA1 - [2022-07-27]
 
-- Fixa redirect to start when user clicks logout
+### New
+
 - Add modal popup when user creates new playlist
+
+### Fix
+
+- Fixa redirect to start when user clicks logout
 
 ## 1.0.0-ALPHA1 - [2022-07-25]
 
