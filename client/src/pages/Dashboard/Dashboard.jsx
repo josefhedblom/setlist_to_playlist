@@ -2,12 +2,22 @@ import { useState } from "react";
 import { Result } from "../Result/Result";
 export function Dashboard() {
   const [search, setSearch] = useState("");
+  const [error, setError] = useState("");
   const [result, setResult] = useState([]);
 
   const fetchData = async (search) => {
-    const data = await fetch("/api/setlist/artists/" + search);
-    const response = await data.json();
-    setResult(response);
+    try {
+      const data = await fetch("/api/setlist/artists/" + search);
+      if (data.status === 429) {
+        setError(data.statusText);
+      }
+      const response = await data.json();
+      setResult(response);
+    } catch {
+      (error) => {
+        console.log(error);
+      };
+    }
   };
 
   const handleSubmit = (event) => {
@@ -32,7 +42,13 @@ export function Dashboard() {
           </button>
         </div>
       </form>
-      <div>{result.length > 0 ? <Result data={result} /> : ""}</div>
+      <div>
+        {result.length > 0 && error.length < 1 ? (
+          <Result data={result} />
+        ) : (
+          <p>{error}</p>
+        )}
+      </div>
     </div>
   );
 }
