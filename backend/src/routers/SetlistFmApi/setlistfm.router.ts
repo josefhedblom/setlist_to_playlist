@@ -9,7 +9,7 @@ Route.get('/artists/:search', (req: Request, res: Response) => {
   setlist
     .searchArtist(`${search}`)
     .then((data) => res.json(data))
-    .catch((error) => console.log(error));
+    .catch((error) => res.json({ message: error }));
 });
 
 export { Route as SetlistRouter };
