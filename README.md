@@ -1,3 +1,9 @@
+## 1.2.0-ALPHA1 - [2022-08-01]
+
+### New
+
+- Rate limit for SetlistFm Api
+
 ## 1.1.0-ALPHA1 - [2022-07-30]
 
 ### New
