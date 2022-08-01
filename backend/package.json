@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/src/index.js",
-    "dev": "nodemon src/index.ts",
-    "build": "tsc -p ."
+    "dev": "NODE_ENV=development nodemon src/index.ts",
+    "stage": "NODE_ENV=stage nodemon src/index.ts",
+    "production": " ./build-backend.sh",
+    "restore": "./restore-backend.sh"
   },
   "keywords": [],
   "author": "",

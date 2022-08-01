@@ -1,6 +1,6 @@
-import { Request, Response, NextFunction, Router } from 'express';
+import { Request, Response, Router } from 'express';
 import { SetlistFm } from '../../controllers/SetlistFm.controller';
-import { CONFIG } from '../../config/env.config';
+import CONFIG from '../../config/index';
 const Route = Router();
 
 Route.get('/artists/:search', (req: Request, res: Response) => {

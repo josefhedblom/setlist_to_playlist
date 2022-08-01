@@ -1,4 +1,4 @@
-import { CONFIG } from "../../config/env.config";
+import CONFIG from "../../config/index";
 import SpotifyLogo from "../../assets/Spotify_Icon_RGB_White.png";
 export function Login() {
   return (
@@ -13,7 +13,7 @@ export function Login() {
           <a
             className="btn btn-lg"
             style={{ backgroundColor: "#1DB954", color: "#fff" }}
-            href={CONFIG.URL_DEV}
+            href={CONFIG.URL}
           >
             <img
               src={SpotifyLogo}

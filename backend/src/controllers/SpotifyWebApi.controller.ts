@@ -1,12 +1,12 @@
 import SpotifyWebApi from 'spotify-web-api-node';
-import { CONFIG } from '../config/env.config';
+import CONFIG from '../config/index';
 import { Setlist } from '../interface/SpotifyApi/spotify.interface';
 
 export class Spotify {
   spotify = new SpotifyWebApi({
     clientId: `${CONFIG.CLIENT_ID}`,
     clientSecret: `${CONFIG.CLIENT_SECRET}`,
-    redirectUri: `${CONFIG.REDIRECT_DEV_URI}`,
+    redirectUri: `${CONFIG.REDIRECT_URI}`,
   });
 
   DATA: Setlist[] = [];
