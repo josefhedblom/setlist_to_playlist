@@ -23,5 +23,11 @@ dist-ssr
 *.sln
 *.sw?
 
-# ENV
-/src/config/env.config.ts
+# CONFIG
+src/config/development.config.js
+src/config/production.config.js
+src/config/index.js
+
+# SHELL SCRIPTS
+build-client.sh
+restore-client.sh
