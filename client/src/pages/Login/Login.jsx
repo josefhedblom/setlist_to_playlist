@@ -1,5 +1,6 @@
 import CONFIG from "../../config/index";
-import SpotifyLogo from "../../assets/Spotify_Icon_RGB_White.png";
+import SpotifyLogo from "../../assets/Spotify_Logo_RGB_Green.png";
+import SpotifyIcon from "../../assets/Spotify_Icon_RGB_White.png";
 export function Login() {
   return (
     <div className="px-4 py-5 my-5 text-center">
@@ -9,18 +10,28 @@ export function Login() {
           With Setlist to Playlist you can search for artists' concerts and
           create Spotify playlists from their setlist!
         </p>
-        <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <div>
           <a
             className="btn btn-lg"
-            style={{ backgroundColor: "#1DB954", color: "#fff" }}
+            style={{
+              backgroundColor: "#1DB954",
+              color: "#fff",
+              width: "100%",
+              borderRadius: "50px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "2rem",
+              padding: "1rem",
+            }}
             href={CONFIG.URL}
           >
             <img
-              src={SpotifyLogo}
+              src={SpotifyIcon}
               alt="Spotify-logo"
-              style={{ width: "90px", height: "100%", padding: "1rem" }}
+              style={{ width: "80px", height: "80px" }}
             />
-            Login in with Spotify
+            Login in Spotify
           </a>
         </div>
       </div>
