@@ -35,6 +35,7 @@ export function Dashboard() {
     event.preventDefault();
 
     fetchData(search);
+    setSearch("");
   };
   return (
     <div>
@@ -84,6 +85,7 @@ export function Dashboard() {
             aria-label="Search SetlistFm"
             aria-describedby="button-addon2"
             onChange={(e) => setSearch(e.target.value)}
+            value={search}
           />
           <button className="btn btn-md btn-success" type="submit">
             Search
