@@ -1,5 +1,5 @@
+import { useState } from "react";
 import CONFIG from "../../config/index";
-import SpotifyLogo from "../../assets/Spotify_Logo_RGB_Green.png";
 import SpotifyIcon from "../../assets/Spotify_Icon_RGB_White.png";
 export function Login() {
   return (
@@ -7,8 +7,8 @@ export function Login() {
       <h1 className="display-5 fw-bold">Setlist to Playlist</h1>
       <div className="col-lg-6 mx-auto">
         <p className="lead mb-4">
-          With Setlist to Playlist you can search for artists' concerts and
-          create Spotify playlists from their setlist!
+          With Setlist to Playlist you can search for artists' concerts and create Spotify playlists
+          from their setlist!
         </p>
         <div>
           <a
@@ -26,11 +26,7 @@ export function Login() {
             }}
             href={CONFIG.URL}
           >
-            <img
-              src={SpotifyIcon}
-              alt="Spotify-logo"
-              style={{ width: "80px", height: "80px" }}
-            />
+            <img src={SpotifyIcon} alt="Spotify-logo" style={{ width: "80px", height: "80px" }} />
             Login in Spotify
           </a>
         </div>
