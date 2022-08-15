@@ -35,7 +35,6 @@ src/config/stage.ts
 build-backend.sh
 restore-backend.sh
 commit-backend.sh
-
 # DIST
 dist-backend
 # parcel-bundler cache (https://parceljs.org/)
