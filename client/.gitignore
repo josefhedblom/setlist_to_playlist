@@ -23,7 +23,12 @@ dist-ssr
 *.sln
 *.sw?
 
+# CONFIG
+src/config/development.config.js
+src/config/production.config.js
+
 # SHELL SCRIPTS
 build-client.sh
 restore-client.sh
+commit-client.sh
 

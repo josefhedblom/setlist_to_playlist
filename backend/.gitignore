@@ -27,9 +27,16 @@ typings/
 # Output of 'npm pack'
 *.tgz
 
+# dotenv environment variables file
+src/config/development.ts
+src/config/stage.ts
+
 # SHELL SCRIPTS
 build-backend.sh
 restore-backend.sh
+commit-backend.sh
 
 # DIST
 dist-backend
+# parcel-bundler cache (https://parceljs.org/)
+.cache
