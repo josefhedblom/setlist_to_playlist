@@ -1,5 +1,3 @@
-import ListGroup from "react-bootstrap/ListGroup";
-import Button from "react-bootstrap/Button";
 import { SpotifyContext } from "../../context/SpotifyContext";
 import axios from "axios";
 export const SetListItem = ({ data }) => {
@@ -16,23 +14,17 @@ export const SetListItem = ({ data }) => {
       .catch((error) => console.log(error));
   };
   return (
-    <ListGroup variant="flush" as="ol" numbered>
-      {data.set.map(({ song }) => {
-        return song.map((songs, index) => {
-          return (
-            <ListGroup.Item key={index} as="li">
-              {songs.name}{" "}
-              <Button
-                onClick={() => addToPlaylist(songs.name)}
-                size="sm"
-                variant="outline-secondary"
-              >
-                Add to playlist
-              </Button>
-            </ListGroup.Item>
-          );
-        });
-      })}
-    </ListGroup>
+    <div className="accordion__content">
+      <section className="button">
+        <button onClick={() => addToPlaylist(songs.name)}>Save playlist</button>
+      </section>
+      <ol>
+        {data.set.map(({ song }) => {
+          return song.map((songs, index) => {
+            return <li key={index}>{songs.name}</li>;
+          });
+        })}
+      </ol>
+    </div>
   );
 };

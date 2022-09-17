@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 import { setAccessToken } from "./hooks/useAuth";
 import Container from "react-bootstrap/Container";
 import { Navbar } from "./components/Navbar";
@@ -18,9 +18,14 @@ function App() {
   });
 
   return (
-    <div className="d-flex flex-column min-vh-100">
+    <>
       <Navbar />
-      <Container>
+      <main className="main">
+        <header className="main-title">
+          <Link to="/">
+            <h1>Setlist to Playlist</h1>
+          </Link>
+        </header>
         <Routes>
           <Route
             exact
@@ -38,9 +43,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/release-notes" element={<Release />} />
         </Routes>
-      </Container>
-      <Footer />
-    </div>
+      </main>
+    </>
   );
 }
 
