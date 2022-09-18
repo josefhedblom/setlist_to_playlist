@@ -8,26 +8,40 @@ export const Navbar = () => {
 
   return (
     <header>
-      <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
-        <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
-            Setlist to Playlist
-          </Link>
-
-          <div className="d-flex">
-            <Link className="nav-link" to="/about">
-              About
-            </Link>
-            {localStorage.getItem("access_token") ? (
-              <button
-                onClick={() => logout()}
-                className="btn btn-outline-success"
-              >
-                Logout
-              </button>
-            ) : null}
-          </div>
-        </div>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <a href="https://josefhedblom.se" target="_blank">
+              Contact
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/josefhedblom" target="_blank">
+              Github
+            </a>
+          </li>
+          <li>
+            <Link to="/release-notes">Release notes</Link>
+          </li>
+          <li>
+            <a href="https://developer.spotify.com" target="_blank">
+              Spotify Api
+            </a>
+          </li>
+          <li>
+            <a href="https://api.setlist.fm/docs/1.0/index.html" target="_blank">
+              Setlist FM API
+            </a>
+          </li>
+          {localStorage.getItem("access_token") ? (
+            <li onClick={() => logout()}>
+              <a id="logout-btn">Logout</a>
+            </li>
+          ) : null}
+        </ul>
       </nav>
     </header>
   );

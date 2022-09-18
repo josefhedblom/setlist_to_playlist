@@ -1,12 +1,11 @@
-import Container from "react-bootstrap/Container";
 import { FormatResult } from "./FormatResult";
 
 export const Result = ({ data }) => {
   return (
-    <Container>
+    <section className="accordion">
       {data.map((show, index) => {
         return <FormatResult key={index} data={show} />;
       })}
-    </Container>
+    </section>
   );
 };

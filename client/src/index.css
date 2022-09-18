@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap');
+
+* ::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+ol li {
+    border-bottom: 1px solid #000;
+    padding: 10px;
+    font-weight: bold;
+}
+
+
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(204, 204, 204);
+}
+
+a:hover {
+    color: rgb(96, 98, 100);
+}
+
+#logout-btn {
+    cursor: pointer;
+}
+
+header nav ul {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.main {
+    padding: 1rem;
+}
+
+.main-title {
+    font-weight: 500;
+    font-size: 3rem;
+    margin-left: 2rem;
+    text-align: center;
+}
+
+.main-title h1 {
+    color: #000;
+    text-transform: none;
+}
+
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loginBtn {
+    background-color: rgb(29, 185, 84);
+    color: rgb(255, 255, 255);
+    border-radius: 30px;
+    padding: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#loginLogo {
+    min-width: 70px;
+    width: 200px;
+    height: 100%;
+    margin-bottom: 1.5rem;
+}
+
+input {
+    margin-left: 3rem;
+    margin-top: 10px;
+    padding: 5px 2px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    border-bottom: 3px solid;
+    width: 500px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5rem;
+}
+
+
+.accordion {
+    width: 70%;
+    margin: 20px auto;
+    padding-top: 1rem;
+    border-radius: 5px;
+    overflow: hidden;
+    font-family: "Quicksand", sans-serif;
+    background: #ffffff;
+}
+
+.accordion__label,
+.accordion__content {
+    padding: 14px 20px;
+}
+
+.accordion__box {
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    margin-bottom: .55rem;
+}
+
+.accordion__label {
+    display: block;
+    color: #000;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+
+}
+
+.accordion__label:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.accordion__label::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    width: 12px;
+    height: 6px;
+    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" style="fill:%2300000099;" /></svg>');
+    background-size: contain;
+    transition: transform 0.4s;
+}
+
+.accordion__content {
+    background: #ffffff;
+    line-height: 1.6;
+    font-size: 0.85em;
+    display: none;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accordion__content button {
+    color: #fff;
+    background-color: #000;
+    border-color: #0d6efd;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+}
+
+.accordion__input {
+    display: none;
+}
+
+.accordion__input:checked~.accordion__content {
+    display: block;
+}
+
+.accordion__input:checked~.accordion__label::after {
+    transform: translateY(-50%) rotate(0.5turn);
+}
