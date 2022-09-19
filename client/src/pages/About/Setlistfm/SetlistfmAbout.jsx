@@ -1,21 +1,22 @@
 export const SetlistfmAbout = ({ token }) => {
   return (
-    <div className="px-2 py-2 my-2 text-center">
-      <h1 className="display-5 fw-bold">Setlist.fm</h1>
-      <div className="col-lg-6 mx-auto">
-        <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
+    <div>
+      <h1 className="about-title">Setlist.fm</h1>
+      <div>
+        <div>
           <p>
-            All information about the concerts for a single band or artist comes
-            from setlist.fm database. All information available on the{" "}
+            All information about the concerts for a single band or artist comes from setlist.fm
+            database. All information available on the{" "}
             {
-              <a href="https://www.setlist.fm" target="_blank">
+              <a className="link__hover" href="https://www.setlist.fm" target="_blank">
                 setlist.fm
               </a>
             }{" "}
-            website. You need to apply for a setlist.fm API key to download data
-            and use them. they are free for non-commercial projects.{" "}
+            website. You need to apply for a setlist.fm API key to download data and use them. they
+            are free for non-commercial projects.{" "}
             {
               <a
+                className="link__hover"
                 href="https://api.setlist.fm/docs/1.0/index.html"
                 target="_blank"
               >
@@ -24,7 +25,7 @@ export const SetlistfmAbout = ({ token }) => {
             }
             . Please read the{" "}
             {
-              <a href="https://www.setlist.fm/help/terms" target="_blank">
+              <a className="link__hover" href="https://www.setlist.fm/help/terms" target="_blank">
                 API Terms of Use carefully
               </a>
             }
