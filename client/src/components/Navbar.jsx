@@ -11,34 +11,48 @@ export const Navbar = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/about">About</Link>
+            <Link className="link__hover__navbar" to="/about">
+              About
+            </Link>
           </li>
           <li>
-            <a href="https://josefhedblom.se" target="_blank">
+            <a className="link__hover__navbar" href="https://josefhedblom.se" target="_blank">
               Contact
             </a>
           </li>
           <li>
-            <a href="https://github.com/josefhedblom" target="_blank">
+            <a
+              className="link__hover__navbar"
+              href="https://github.com/josefhedblom"
+              target="_blank"
+            >
               Github
             </a>
           </li>
           <li>
-            <Link to="/release-notes">Release notes</Link>
+            <Link className="link__hover__navbar" to="/release-notes">
+              Release notes
+            </Link>
           </li>
           <li>
-            <a href="https://developer.spotify.com" target="_blank">
+            <a className="link__hover__navbar" href="https://developer.spotify.com" target="_blank">
               Spotify Api
             </a>
           </li>
           <li>
-            <a href="https://api.setlist.fm/docs/1.0/index.html" target="_blank">
+            <a
+              className="link__hover__navbar"
+              href="https://api.setlist.fm/docs/1.0/index.html"
+              target="_blank"
+            >
               Setlist FM API
             </a>
           </li>
           {localStorage.getItem("access_token") ? (
             <li onClick={() => logout()}>
-              <a id="logout-btn">Logout</a>
+              <a className="link__hover__navbar" id="logout-btn">
+                Logout
+              </a>
             </li>
           ) : null}
         </ul>

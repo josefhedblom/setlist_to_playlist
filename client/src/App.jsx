@@ -22,9 +22,9 @@ function App() {
       <Navbar />
       <main className="main">
         <header className="main-title">
-          <Link to="/">
-            <h1>Setlist to Playlist</h1>
-          </Link>
+          <h1>
+            <Link to="/">Setlist to Playlist</Link>
+          </h1>
         </header>
         <Routes>
           <Route

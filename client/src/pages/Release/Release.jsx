@@ -13,7 +13,7 @@ export const Release = () => {
   }, []);
 
   return (
-    <div>
+    <div className="release__notes">
       <h1>Release notes</h1>
       <ReactMarkdown>{notes}</ReactMarkdown>
     </div>
