@@ -1,15 +1,10 @@
 import React, { useState } from "react";
-import ListGroup from "react-bootstrap/ListGroup";
-import MyModal from "../../components/Modal";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
 import { SpotifyContext } from "../../context/SpotifyContext";
 import axios from "axios";
 export const CreatePlaylistButton = ({ data }) => {
   const [show, setShow] = useState(false);
   const [playlistLink, setPlaylistLink] = useState("");
 
-  const handleClose = () => setShow(false);
   const accessToken = SpotifyContext();
 
   const createPlaylist = async () => {
@@ -20,10 +15,7 @@ export const CreatePlaylistButton = ({ data }) => {
         console.log(response.status);
         if (response.status === 200) {
           setPlaylistLink(response.data.playlistId.playlistId);
-          localStorage.setItem(
-            "playlistId",
-            response.data.playlistId.playlistId
-          );
+          localStorage.setItem("playlistId", response.data.playlistId.playlistId);
           setShow(true);
         }
       })
@@ -35,9 +27,17 @@ export const CreatePlaylistButton = ({ data }) => {
 
   return (
     <>
-      <ListGroup
+      <section className="accordion__content__button">
+        <button onClick={() => createPlaylist(songs.name)}>Create playlist</button>
+      </section>
+    </>
+  );
+};
+
+/* 
+<ListGroup
         variant="flush"
-        as="ol"
+        as="li"
         className="d-flex justify-content-center align-items-center"
       >
         <ListGroup.Item as="li">
@@ -53,10 +53,7 @@ export const CreatePlaylistButton = ({ data }) => {
               <h5>
                 {data.artist} live @ {data.venue} | {data.eventDate}
               </h5>
-              <a
-                href={`https://open.spotify.com/playlist/${playlistLink}`}
-                target="_blank"
-              >
+              <a href={`https://open.spotify.com/playlist/${playlistLink}`} target="_blank">
                 View Spotify playlist{" "}
               </a>{" "}
               |{" "}
@@ -73,6 +70,4 @@ export const CreatePlaylistButton = ({ data }) => {
           </Modal>
         </ListGroup.Item>
       </ListGroup>
-    </>
-  );
-};
+*/

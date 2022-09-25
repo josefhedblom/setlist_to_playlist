@@ -1,17 +1,18 @@
-import { CreatePlaylistButton } from "./CreatPlaylistButton";
+import { useId } from "react";
 import { SetListItem } from "./SetListItem";
 
 export const FormatResult = ({ data }) => {
+  const sectionId = useId();
   if (data.set.length > 0) {
     return (
       <div className="accordion__box">
         <input
           type="checkbox"
           name="example_accordion"
-          id="section1"
+          id={sectionId}
           className="accordion__input"
         />
-        <label for="section1" className="accordion__label">
+        <label for={sectionId} className="accordion__label">
           {data.artist} - {data.venue} - {data.eventDate}
         </label>
         <SetListItem data={data} />
