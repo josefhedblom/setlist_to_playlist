@@ -12,9 +12,10 @@ export class SetlistFm {
     this.CONFIG.HEADERS['x-api-key'] = apiKey;
   }
   searchArtist(artist: string) {
+    let urlencoded = encodeURIComponent(artist);
     return axios({
       method: 'GET',
-      url: `${this.CONFIG.BASE_URL}${artist}`,
+      url: `${this.CONFIG.BASE_URL}${urlencoded}`,
       headers: this.CONFIG.HEADERS,
     }).then(this.searchArtistResult);
   }
