@@ -15,7 +15,7 @@ export const Release = () => {
   return (
     <div className="release__notes">
       <h1>Release notes</h1>
-      <ReactMarkdown>{notes}</ReactMarkdown>
+      <ReactMarkdown className="release">{notes}</ReactMarkdown>
     </div>
   );
 };

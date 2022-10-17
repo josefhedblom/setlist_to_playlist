@@ -29,7 +29,7 @@ export function Dashboard() {
   };
   return (
     <>
-      <section class="search-container">
+      <section id="search-container">
         <form onSubmit={handleSubmit}>
           <input
             type="text"

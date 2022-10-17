@@ -20,30 +20,28 @@ function App() {
   return (
     <>
       <Navbar />
-      <main className="main">
-        <header className="main-title">
-          <h1>
-            <Link to="/">Setlist to Playlist</Link>
-          </h1>
-        </header>
-        <Routes>
-          <Route
-            exact
-            path="/"
-            element={
-              token ? (
-                <ModalProvider>
-                  <Dashboard />
-                </ModalProvider>
-              ) : (
-                <Login />
-              )
-            }
-          />
-          <Route path="/about" element={<About />} />
-          <Route path="/release-notes" element={<Release />} />
-        </Routes>
-      </main>
+      <header id="header__title">
+        <h1>
+          <Link to="/">Setlist to Playlist</Link>
+        </h1>
+      </header>
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={
+            token ? (
+              <ModalProvider>
+                <Dashboard />
+              </ModalProvider>
+            ) : (
+              <Login />
+            )
+          }
+        />
+        <Route path="/about" element={<About />} />
+        <Route path="/release-notes" element={<Release />} />
+      </Routes>
     </>
   );
 }
