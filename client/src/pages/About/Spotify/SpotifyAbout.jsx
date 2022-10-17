@@ -1,7 +1,7 @@
 import SpotifyLogo from "../../../assets/Spotify_Logo_RGB_Green.png";
 export const SpotifyAbout = () => {
   return (
-    <div>
+    <div className="about__container">
       <div className="about-title">
         <img
           src={SpotifyLogo}

@@ -1,6 +1,6 @@
 export const SetlistfmAbout = ({ token }) => {
   return (
-    <div>
+    <div className="about__container">
       <h1 className="about-title">Setlist.fm</h1>
       <div>
         <div>
