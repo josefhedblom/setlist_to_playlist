@@ -1,3 +1,9 @@
+## 1.4.0-ALPHA1 - [2022-10-17]
+
+### New
+
+- Update responsive-layout
+
 ## 1.3.0-ALPHA1 - [2022-09-25]
 
 ### New
